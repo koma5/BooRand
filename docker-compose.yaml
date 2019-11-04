@@ -10,4 +10,4 @@ services:
     callfilegen:
         build: callfilegen
         volumes:
-            - ./callfiledrop:callfiledrop
+            - ./callfiledrop:/callfiledrop
