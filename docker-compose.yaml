@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+    asterisk:
+        build: asterisk
+        volumes:
+            - ./callfiledrop:/var/spool/asterisk/outgoing
+
+
+    callfilegen:
+        build: callfilegen
+        volumes:
+            - ./callfiledrop:callfiledrop
