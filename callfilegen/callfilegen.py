@@ -65,7 +65,7 @@ Priority: 1
     number = random.choice(numbers)
     print(number[0], " id: ", number[1])
     f = open("/callfiledrop/" + number[0], "x")
-    f.write(callfile_template.format(number))
+    f.write(callfile_template.format(number[0]))
     f.close()
 
 
