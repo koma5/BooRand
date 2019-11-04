@@ -46,7 +46,7 @@ out body;
                 phone = p['tags']['contact:phone']
 
             number = phone.replace(" ", "").replace("+41", "0").replace("0041", "0")
-            numbers.append(number)
+            numbers.append([number, p["id"]])
             #print(phone.replace(" ", "").replace("+41", "0").replace("0041", "0") + " " + str(p['id']))
             #print(phone.replace(" ", "").replace("+41", "0").replace("0041", "0") + " " + str(p['id']) + " " + json.dumps(p))
 
@@ -63,8 +63,8 @@ Extension: 1000
 Priority: 1
 """
     number = random.choice(numbers)
-    print(number)
-    f = open("/callfiledrop/" + number, "x")
+    print(number[0], " id: ", number[1])
+    f = open("/callfiledrop/" + number[0], "x")
     f.write(callfile_template.format(number))
     f.close()
 
