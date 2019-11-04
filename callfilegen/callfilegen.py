@@ -51,6 +51,7 @@ out body;
             #print(phone.replace(" ", "").replace("+41", "0").replace("0041", "0") + " " + str(p['id']) + " " + json.dumps(p))
 
     print(len(numbers))
+    print(numbers)
 
 def gen_call_file():
 
@@ -62,7 +63,7 @@ Extension: 1000
 Priority: 1
 """
     number = random.choice(numbers)
-    print(numbers)
+    print(number)
     f = open("/callfiledrop/" + number, "x")
     f.write(callfile_template.format(number))
     f.close()
