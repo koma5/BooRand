@@ -9,5 +9,6 @@ services:
 
     callfilegen:
         build: callfilegen
+        restart: always
         volumes:
             - ./callfiledrop:/callfiledrop
