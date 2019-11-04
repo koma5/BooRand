@@ -56,12 +56,16 @@ def gen_call_file():
 
     callfile_template = """
 Channel: SIP/provider/{}
-WaitTime: 33
+WaitTime: 60
 Context: plaything
 Extension: 1000
 Priority: 1
 """
-    print(callfile_template.format(random.choice(numbers)))
+    number = random.choice(numbers)
+    print(numbers)
+    f = open("/callfiledrop/" + number, "x")
+    f.write(callfile_template.format(number))
+    f.close()
 
 
 def run_times(times, sleep, function):
@@ -73,5 +77,5 @@ def run_times(times, sleep, function):
 
 while True:
     get_numbers()
-    run_times(3, 60, gen_call_file)
+    run_times(100, 60, gen_call_file)
 
