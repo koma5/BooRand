@@ -52,6 +52,7 @@ out body;
 
     print(len(numbers))
     print(numbers)
+    print(data)
 
 def gen_call_file():
 
